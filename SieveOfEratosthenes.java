@@ -22,12 +22,17 @@ class SieveOfEratosthenes
     {
         return prime[number];
     }
-    boolean[] primeRange(int start, int end)
+    int[] primeRange(int start, int end)
     {
-        boolean primes[]=new boolean[start+(end-start)+1];
+        int primes[]=new int[start+(end-start)+1];
+        int a=0;
         for(int i=start;i<=end;i++)
         {
-            primes[i]=prime[i];
+            if(prime[i]==true)
+            {
+                primes[a]=i;
+                a++;
+            }
         }
         return primes;
     }
